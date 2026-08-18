@@ -161,6 +161,21 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             box-shadow: 0 0 20px var(--lava-glow-strong);
         }
 
+        .nav-links .btn-student {
+            color: var(--lava);
+            background: transparent;
+            border: 1px solid var(--border-hot);
+            padding: 0.35rem 0.9rem;
+            border-radius: 6px;
+            margin-left: 0.5rem;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+
+        .nav-links .btn-student:hover {
+            background: var(--lava-glow);
+            box-shadow: 0 0 16px var(--lava-glow-strong);
+        }
+
         /* ── HERO ── */
         .hero {
             padding: 7rem 2rem 5rem;
@@ -566,6 +581,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
     <div class="nav-links">
         <a href="https://lavalust.netlify.app/docs/" target="_blank">Docs</a>
         <a href="https://github.com/ronmarasigan/LavaLust" target="_blank">GitHub</a>
+        <a href="<?= site_url('student'); ?>" class="btn-student">Student Page →</a>
         <a href="https://lavalust.netlify.app/docs/" target="_blank" class="btn-nav">Get Started →</a>
     </div>
 </nav>
