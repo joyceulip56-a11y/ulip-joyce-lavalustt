@@ -45,16 +45,6 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 /** @var object $router **/
 
 $router->get('/', 'Welcome::index');
-
-/*
-| -------------------------------------------------------------------
-| Student Information Page Routes
-| -------------------------------------------------------------------
-| /student          -> Student home page
-| /student/access    -> Grants session access, then redirects to profile
-| /student/profile   -> Student profile page (protected by StudentMiddleware)
-| /student/logout    -> Revokes access, redirects back to home
-*/
 $router->get('/student', 'StudentController::index');
 $router->get('/student/access', 'StudentController::access');
 $router->get('/student/logout', 'StudentController::logout');
