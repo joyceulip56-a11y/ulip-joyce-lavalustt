@@ -219,11 +219,6 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         &#128100; Student Profile
     </a>
 
-    <div class="notice">
-        <p>&#128274; The Student Profile page is protected by <strong>StudentMiddleware</strong>.</p>
-        <p>If you haven't unlocked access yet, click <a href="<?= site_url('student/unlock'); ?>">here to grant access</a> before opening your profile.</p>
-    </div>
-
     <div class="divider"></div>
     <div class="footer-tag">LavaLust &bull; Student Portal</div>
 </div>
