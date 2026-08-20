@@ -46,16 +46,17 @@ class StudentController extends Controller
     private function student_data()
     {
         return [
-            'student_id'  => 'MCC2023-01237',
-            'name'        => 'Jhon Michael Riel',
+            'student_id'  => 'MCC2024-00170',
+            'name'        => 'Joyce L. Ulip',
             'course'      => 'BS Information Technology',
             'year'        => '3rd Year',
-            'section'     => 'F5',
-            'email'       => 'rieljohnmichael026@gmail.com',
-            'address'     => 'Barcenaga, Naujan, Oriental Mindoro, Philippines',
-            'contact_no'  => '09513657032',
-            'hobbies'     => 'Coding, Basketball, Gaming',
-            'description' => 'Mas sumarap.',
+            'section'     => 'F4',
+            'email'       => 'joyceulip56@gmail.com',
+            'address'     => 'Tigkan Naujan Oriental Mindoro ',
+            'contact_no'  => '09661755003',
+            'hobbies'     => 'Watching Tiktok',
+            'description' => 'I am a hardworking and responsible student who is always willing to learn new things. I am friendly, determined, and committed to achieving my goals. I believe that every challenge is an opportunity to improve myself and gain new experiences.',
+            'Facebook'    => 'https://www.facebook.com/ULIPJOYCE23',
         ];
     }
 }
