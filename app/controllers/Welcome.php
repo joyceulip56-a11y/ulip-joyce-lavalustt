@@ -6,5 +6,8 @@ class Welcome extends Controller {
 		$this->call->view('welcome_page');
 	}
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 121063916e1ca72aaba7c3715e9c867cbb14a09a
 ?>
