@@ -49,3 +49,4 @@ $router->get('/student', 'StudentController::index');
 $router->get('/student/access', 'StudentController::access');
 $router->get('/student/logout', 'StudentController::logout');
 $router->get('/student/profile', 'StudentController::profile')->middleware('student');
+$router->get('/users', 'UsersController::index');
