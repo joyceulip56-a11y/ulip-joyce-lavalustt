@@ -73,11 +73,9 @@ define('PREVENT_DIRECT_ACCESS', TRUE);
  * Define Application Constants
  * ------------------------------------------------------
  */
-<<<<<<< HEAD
-define('ROOT_DIR', dirname(__DIR__) . DIRECTORY_SEPARATOR);
-=======
+
+
 define('ROOT_DIR',  dirname(__DIR__) . DIRECTORY_SEPARATOR);
->>>>>>> 121063916e1ca72aaba7c3715e9c867cbb14a09a
 define('SYSTEM_DIR', ROOT_DIR . $system_path . DIRECTORY_SEPARATOR);
 define('APP_DIR', ROOT_DIR . $application_folder . DIRECTORY_SEPARATOR);
 define('PUBLIC_DIR', $public_folder);

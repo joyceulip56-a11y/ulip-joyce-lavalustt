@@ -1,5 +1,6 @@
 <?php
 defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
+
 /**
  * ------------------------------------------------------------------
  * LavaLust - an opensource lightweight PHP MVC Framework
@@ -43,7 +44,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 | In order to keep the framework as light-weight as possible only the
 | absolute minimal resources are loaded by default. For example,
 | the database is not connected to automatically since no assumption
-| is made regarding whether you intend to use it.  This file lets
+| is made regarding whether you intend to use it. This file lets
 | you globally define which systems you would like loaded with every
 | request.
 |
@@ -62,7 +63,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
-|  Auto-load Libraries
+| Auto-load Libraries
 | -------------------------------------------------------------------
 | These are the classes located in scheme/libraries/ or your
 | app/libraries/ directory, with the addition of the
@@ -70,49 +71,46 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 |
 | Prototype:
 |
-|	$autoload['libraries'] = array('database', 'email', 'session');
+|   $autoload['libraries'] = array('database', 'email', 'session');
 */
-<<<<<<< HEAD
+
 $autoload['libraries'] = array('database');
-=======
-$autoload['libraries'] = array();
->>>>>>> 121063916e1ca72aaba7c3715e9c867cbb14a09a
 
 /*
 | -------------------------------------------------------------------
-|  Auto-load Helper Files
+| Auto-load Helper Files
 | -------------------------------------------------------------------
 | Prototype:
 |
-|	$autoload['helpers'] = array('url', 'file');
+|   $autoload['helpers'] = array('url', 'file');
 */
-<<<<<<< HEAD
+
 $autoload['helpers'] = array('url');
-=======
-$autoload['helpers'] = array();
->>>>>>> 121063916e1ca72aaba7c3715e9c867cbb14a09a
 
 /*
 | -------------------------------------------------------------------
-|  Auto-load Models
+| Auto-load Models
 | -------------------------------------------------------------------
 | Prototype:
 |
-|	$autoload['models'] = array('model1_model', 'model2_model')
+|   $autoload['models'] = array('model1_model', 'model2_model')
 */
+
 $autoload['models'] = array();
 
 /*
 | -------------------------------------------------------------------
-|  Auto-load Config files
+| Auto-load Config files
 | -------------------------------------------------------------------
 | Prototype:
 |
-|	$autoload['configs'] = array('config1', 'config2');
+|   $autoload['configs'] = array('config1', 'config2');
 |
 | NOTE: This item is intended for use ONLY if you have created custom
-| config files.  Otherwise, leave it blank.
+| config files. Otherwise, leave it blank.
 |
 */
+
 $autoload['configs'] = array();
+
 ?>
