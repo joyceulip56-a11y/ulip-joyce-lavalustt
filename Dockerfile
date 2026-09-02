@@ -1,53 +1,38 @@
-<<<<<<< HEAD
 FROM php:8.2-apache
 
-WORKDIR /var/www/html
+# Install required PHP extensions for MySQL (Aiven)
+RUN docker-php-ext-install pdo pdo_mysql mysqli
 
-COPY . /var/www/html/
-
+# Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
+# Set document root to public folder
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
 
+# Update Apache configuration to point to document root
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' \
     /etc/apache2/sites-available/*.conf \
     /etc/apache2/apache2.conf \
     /etc/apache2/conf-available/*.conf
 
+# Set Apache directory permissions
 RUN printf '%s\n' \
     '<Directory /var/www/html/public>' \
     '    Options Indexes FollowSymLinks' \
     '    AllowOverride All' \
     '    Require all granted' \
     '</Directory>' \
-    > /etc/apache2/conf-available/lavalust.conf
+    > /etc/apache2/conf-available/lavalust.conf \
+    && a2enconf lavalust
 
-RUN a2enconf lavalust
+# Set working directory and copy application files
+WORKDIR /var/www/html
+COPY . /var/www/html/
 
-RUN chown -R www-data:www-data /var/www/html
+# Fix permissions for Apache
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html
 
 EXPOSE 80
 
 CMD ["apache2-foreground"]
-=======
-ARG PHP_VERSION=8.5
-FROM php:${PHP_VERSION}-apache
-
-# Install PDO MySQL
-RUN docker-php-ext-install pdo pdo_mysql
-
-# Enable Apache mod_rewrite
-RUN a2enmod rewrite
-
-# Allow .htaccess overrides
-RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
-
-# Copy app files
-COPY . /var/www/html/
-
-# Fix permissions
-RUN chown -R www-data:www-data /var/www/html \
-&& chmod -R 755 /var/www/html
-
-EXPOSE 80
->>>>>>> 121063916e1ca72aaba7c3715e9c867cbb14a09a
