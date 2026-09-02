@@ -56,7 +56,7 @@ $database['main'] = array(
 
     'hostname' => getenv('DB_HOST') ?: 'mysql-b1fd970-joyceulip56-62d4.k.aivencloud.com',
     'username' => getenv('DB_USERNAME') ?: 'avnadmin',
-    'password' => getenv('DB_PASSWORD') ?: 'AVNS_dg_WqBVXHIKVT70mPUx',
+    'password' => getenv('DB_PASSWORD'),
     'database' => getenv('DB_DATABASE') ?: 'mydb',
     'driver'   => 'mysql',
     'port'     => getenv('DB_PORT') ?: 15510,
@@ -65,8 +65,6 @@ $database['main'] = array(
     'cache_on' => FALSE,
     'cachedir' => '',
     'char_set' => 'utf8mb4',
-    'dbcollat' => 'utf8mb4_general_ci',
-
-);
+    'dbcollat' => 'utf8mb4_general_ci',);
 
 ?>
