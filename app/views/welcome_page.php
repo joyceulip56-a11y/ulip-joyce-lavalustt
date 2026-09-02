@@ -1,7 +1,6 @@
 <?php
 defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 ?>
-<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html lang="en">
@@ -900,7 +899,6 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
 </body>
 
-=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1659,5 +1657,4 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 </footer>
 
 </body>
->>>>>>> 121063916e1ca72aaba7c3715e9c867cbb14a09a
 </html>
