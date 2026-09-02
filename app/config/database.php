@@ -1,5 +1,7 @@
+
 <?php
 defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
+
 /**
  * ------------------------------------------------------------------
  * LavaLust - an opensource lightweight PHP MVC Framework
@@ -15,9 +17,6 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -43,22 +42,18 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 | EXPLANATION OF VARIABLES
 | -------------------------------------------------------------------
 |
-|	['driver'] 		The driver of your database server.
-|	['hostname'] 	The hostname of your database server.
-|	['port'] 		The port used by your database server.
-|	['username'] 	The username used to connect to the database
-|	['password'] 	The password used to connect to the database
-|	['database'] 	The name of the database you want to connect to
-|	['charset']		The default character set
-|   ['dbprefix']    You can add an optional prefix, which will be added
-|				    to the table name when using the  Query Builder class
-|   You can create new instance of the database by adding new element of
-|   $database variable.
-|   Example: $database['another_example'] = array('key' => 'value')
+| ['driver']      The driver of your database server.
+| ['hostname']    The hostname of your database server.
+| ['port']        The port used by your database server.
+| ['username']    The username used to connect to the database
+| ['password']    The password used to connect to the database
+| ['database']    The name of the database you want to connect to
+| ['charset']     The default character set
+| ['dbprefix']   Optional table prefix
 */
 
 $database['main'] = array(
-<<<<<<< HEAD
+
     'hostname' => getenv('DB_HOST') ?: 'mysql-b1fd970-joyceulip56-62d4.k.aivencloud.com',
     'username' => getenv('DB_USERNAME') ?: 'avnadmin',
     'password' => getenv('DB_PASSWORD') ?: 'AVNS_dg_WqBVXHIKVT70mPUx',
@@ -71,18 +66,7 @@ $database['main'] = array(
     'cachedir' => '',
     'char_set' => 'utf8mb4',
     'dbcollat' => 'utf8mb4_general_ci',
-=======
-    'driver'	=> '',
-    'hostname'	=> getenv('DB_HOST') ?: '',
-    'port'		=> getenv('DB_PORT') ?: '',
-    'username'	=> getenv('DB_USERNAME') ?: '',
-    'password'	=> getenv('DB_PASSWORD') ?: '',
-    'database'	=> getenv('DB_NAME') ?: '',
-    'charset'	=> '',
-    'dbprefix'	=> '',
-    // Optional for SQLite
-    'path'      => ''
->>>>>>> 121063916e1ca72aaba7c3715e9c867cbb14a09a
+
 );
 
 ?>
