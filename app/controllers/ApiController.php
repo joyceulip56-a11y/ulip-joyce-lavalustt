@@ -4,16 +4,26 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 class ApiController extends Controller
 {
     public function __construct()
-{
-    parent::__construct();
+    {
+        parent::__construct();
 
-    header('Access-Control-Allow-Origin: http://localhost:5176');
-    header('Access-Control-Allow-Headers: Content-Type, Authorization');
-    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+        header('Access-Control-Allow-Origin: http://localhost:5176');
+        header('Access-Control-Allow-Headers: Content-Type, Authorization');
+        header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 
-    $this->call->library('api');
-    $this->call->model('ProductModel');
-}
+        $this->call->library('api');
+        $this->call->model('ProductModel');
+    }
+
+    public function cors()
+    {
+        header('Access-Control-Allow-Origin: http://localhost:5176');
+        header('Access-Control-Allow-Headers: Content-Type, Authorization');
+        header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+
+        http_response_code(204);
+        exit;
+    }
 
     public function create()
     {
@@ -37,17 +47,12 @@ class ApiController extends Controller
 
     public function login()
     {
+        if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+            http_response_code(204);
+            exit;
+        }
 
-    header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Headers: Content-Type, Authorization');
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(204);
-    exit;
-}
-
-$this->api->require_method('POST');
+        $this->api->require_method('POST');
 
         $input = $this->api->body();
 
@@ -62,7 +67,6 @@ $this->api->require_method('POST');
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user && password_verify($password, $user['password'])) {
-
             $tokens = $this->api->issue_tokens([
                 'id'   => $user['id'],
                 'role' => $user['role'],
