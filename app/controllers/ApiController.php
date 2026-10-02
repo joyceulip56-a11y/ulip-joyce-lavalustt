@@ -4,26 +4,26 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 class ApiController extends Controller
 {
     public function __construct()
-    {
-        parent::__construct();
+{
+    parent::__construct();
 
-        header('Access-Control-Allow-Origin: http://localhost:5176');
-        header('Access-Control-Allow-Headers: Content-Type, Authorization');
-        header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+    header('Access-Control-Allow-Origin: https://lab6-frontend-ld12.onrender.com');
+    header('Access-Control-Allow-Headers: Content-Type, Authorization');
+    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 
-        $this->call->library('api');
-        $this->call->model('ProductModel');
-    }
+    $this->call->library('api');
+    $this->call->model('ProductModel');
+}
 
     public function cors()
-    {
-        header('Access-Control-Allow-Origin: http://localhost:5176');
-        header('Access-Control-Allow-Headers: Content-Type, Authorization');
-        header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+{
+    header('Access-Control-Allow-Origin: https://lab6-frontend-ld12.onrender.com');
+    header('Access-Control-Allow-Headers: Content-Type, Authorization');
+    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 
-        http_response_code(204);
-        exit;
-    }
+    http_response_code(204);
+    exit;
+}
 
     public function create()
     {
