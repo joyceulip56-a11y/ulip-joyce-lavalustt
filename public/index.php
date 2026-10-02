@@ -1,6 +1,6 @@
 <?php
 
-header('Access-Control-Allow-Origin: http://localhost:5176');
+header('Access-Control-Allow-Origin: https://lab6-frontend-ld12.onrender.com');
 header('Access-Control-Allow-Headers: Content-Type, Authorization');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 
