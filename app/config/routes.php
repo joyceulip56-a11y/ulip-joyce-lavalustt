@@ -43,6 +43,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 |
 */
 /** @var object $router **/
+$router->get('/', 'Welcome::index');
 
 
 $router->get('/products', 'ProductController::index');
@@ -68,6 +69,7 @@ $router->get('status', 'MigrationController::status');
 // API Routes
 $router->post('/api/login', 'ApiController::login');
 $router->options('/api/login', 'ApiController::login');
+$router->options('/api/products', 'ApiController::cors');
 
 $router->get('/api/products', 'ApiController::products');
 $router->post('/api/products', 'ApiController::create_product');
